@@ -8,7 +8,7 @@ spec:
 # users to connect to (browser)
   selector:
     app: webapp # it should be same as the label of POD
-    release: 0 # pointing to the first POD
+    release: "0-5" # pointing to the first POD
   ports:
   - name: http
     port: 80

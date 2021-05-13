@@ -4,7 +4,7 @@ metadata:
   name: webapp
   labels:
     app: webapp # label key app can be any other name
-    release: 0 # introduce new label
+    release: "0" # introduce new label
 spec:
   containers:
   - name: webapp
@@ -17,7 +17,7 @@ metadata:
   name: webapp-release-0-5
   labels:
     app: webapp # label key app can be any other name
-    release:  0-5
+    release:  "0-5"
 spec:
   containers:
   - name: webapp
