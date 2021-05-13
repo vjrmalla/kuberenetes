@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels:
+    app: mysql # label key app can be any other name
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5
+    env:
+     - name: MYSQL_ROOT_PASSWORD
+       value: password
+     - name: MYSQL_DATABASE
+       value: fleetman
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+# this defines which pods are going to be represented by this service.
+# The service becomes a network endpoint for either other services or may be external
+# users to connect to (browser)
+  selector:
+    app: mysql # it should be same as the label of POD
+  ports:
+  - port: 3306
+  type: ClusterIP
