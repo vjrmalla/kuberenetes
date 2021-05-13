@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webapp-rs
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webapp # label key app can be any other name
+    spec:
+      containers:
+      - name: webapp
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release0-5
