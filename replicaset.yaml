@@ -4,6 +4,9 @@ metadata:
   name: webapp-rs
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: webapp # it should be same as the label of POD
   template:
     metadata:
       labels:
